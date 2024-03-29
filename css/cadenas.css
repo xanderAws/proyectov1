@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(../../assets/img/fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+nav {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-left: 5%;
+    padding-right: 5%;
+
+}
+h1{
+    font-size: 35px;
+}
+ul li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+a{
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+a:hover{
+    color: aqua;
+}
+header, footer {
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(128, 128, 128, 0.6);
+}
+section {
+    padding: 20px;
+}
+/* Estilos específicos para la sección de cadenas de restaurantes */
+#cadenas {
+    background-color: rgba(128, 128, 128, 0.6);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+h2{
+    color: white;
+}
+#cadenas2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly; 
+}
+.cadena {
+    width: 300px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+}
+
+.cadena h3 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+.cadena p {
+    color: #666;
+}
+
+.cadena img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.cadena a {
+    display: block;
+    text-align: center;
+    color: #333;
+    text-decoration: none;
+    background-color: #ffd700;
+    padding: 10px 0;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cadena a:hover {
+    background-color: #ffc800;
+}
