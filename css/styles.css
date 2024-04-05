@@ -1,0 +1,32 @@
+/* Personaliza el estilo según sea necesario */
+
+.card {
+    transition: transform 0.3s;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .modal-body {
+    text-align: left;
+  }
+  
+  .modal-footer {
+    justify-content: flex-start;
+  }
+  .card-img-top {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%; /* Puedes ajustar este valor según tus necesidades */
+  }
+  .card-body {
+    text-align: center;
+  }
+  
+  .card-title, .card-text, .btn {
+    margin: auto;
+  }
+ 
+  

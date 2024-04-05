@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menú de Comidas</title>
+  
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../../css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center my-4">Menú de Comidas</h1>
+
+    <!-- Menú de Categorías -->
+    <ul class="nav nav-pills mb-4" id="menuTabs" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="desayunos-tab" data-toggle="pill" href="#desayunos" role="tab" aria-controls="desayunos" aria-selected="true">Desayunos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="platosFuertes-tab" data-toggle="pill" href="#platosFuertes" role="tab" aria-controls="platosFuertes" aria-selected="false">Platos Fuertes</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="ensaladas-tab" data-toggle="pill" href="#ensaladas" role="tab" aria-controls="ensaladas" aria-selected="false">Ensaladas</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="bebidas-tab" data-toggle="pill" href="#bebidas" role="tab" aria-controls="bebidas" aria-selected="false">Bebidas</a>
+      </li>
+    </ul>
+
+    <!-- Contenido del Menú -->
+    <div class="tab-content" id="menuContent">
+      <div class="tab-pane fade show active" id="desayunos" role="tabpanel" aria-labelledby="desayunos-tab">
+        <div class="row" id="desayunosItems">
+          <!-- Aquí se agregarán los desayunos dinámicamente -->
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img src="../../assets/default.jpg" class="card-img-top" alt="Huevos Revueltos">
+              <div class="card-body">
+                <h5 class="card-title">Huevos Revueltos</h5>
+                <p class="card-text">Precio: $5</p>
+                <button class="btn btn-primary btn-sm view-details" data-nombre="Huevos Revueltos" data-precio="5">Ver Detalles</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img src="../../assets/default.jpg" class="card-img-top" alt="Tostadas Francesas">
+              <div class="card-body">
+                <h5 class="card-title">Tostadas Francesas</h5>
+                <p class="card-text">Precio: $6</p>
+                <button class="btn btn-primary btn-sm view-details" data-nombre="Tostadas Francesas" data-precio="6">Ver Detalles</button>
+              </div>
+            </div>
+          </div>
+          <!-- Nuevo desayuno -->
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img src="../../assets/default.jpg" class="card-img-top" alt="Panqueques">
+              <div class="card-body">
+                <h5 class="card-title">Panqueques</h5>
+                <p class="card-text">Precio: $7</p>
+                <button class="btn btn-primary btn-sm view-details" data-nombre="Panqueques" data-precio="7">Ver Detalles</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="platosFuertes" role="tabpanel" aria-labelledby="platosFuertes-tab">
+        <div class="row" id="platosFuertesItems">
+          <!-- Aquí se agregarán los platos fuertes dinámicamente -->
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img src="../../assets/hamburguesa.jpg" class="card-img-top" alt="Hamburguesa">
+              <div class="card-body">
+                <h5 class="card-title">Hamburguesa</h5>
+                <p class="card-text">Precio: $10</p>
+                <button class="btn btn-primary btn-sm view-details" data-nombre="Smokehouse Gourmet" data-precio="10">Ver Detalles</button>
+              </div>
+            </div>
+          </div>
+          <!-- Nuevo plato fuerte -->
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img src="../../assets/default.jpg" class="card-img-top" alt="Salmón a la Parrilla">
+              <div class="card-body">
+                <h5 class="card-title">Salmón a la Parrilla</h5>
+                <p class="card-text">Precio: $15</p>
+                <button class="btn btn-primary btn-sm view-details" data-nombre="Salmón a la Parrilla" data-precio="15">Ver Detalles</button>
+              </div>
+            </div>
+          </div>
+          <!-- Nuevo plato fuerte -->
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img src="../../assets/default.jpg" class="card-img-top" alt="Filete de Ternera">
+              <div class="card-body">
+                <h5 class="card-title">Filete de Ternera</h5>
+                <p class="card-text">Precio: $18</p>
+                <button class="btn btn-primary btn-sm view-details" data-nombre="Filete de Ternera" data-precio="18">Ver Detalles</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="ensaladas" role="tabpanel" aria-labelledby="ensaladas-tab">
+        <div class="row" id="ensaladasItems">
+          <!-- Aquí se agregarán las ensaladas dinámicamente -->
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img src="../../assets/default.jpg" class="card-img-top" alt="Ensalada César">
+              <div class="card-body">
+                <h5 class="card-title">Ensalada César</h5>
+                <p class="card-text">Precio: $8</p>
+                <button class="btn btn-primary btn-sm view-details" data-nombre="Ensalada César" data-precio="8">Ver Detalles</button>
+              </div>
+            </div>
+          </div>
+          <!-- Nueva ensalada -->
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img src="../../assets/default.jpg" class="card-img-top" alt="Ensalada Griega">
+              <div class="card-body">
+                <h5 class="card-title">Ensalada Griega</h5>
+                <p class="card-text">Precio: $9</p>
+                <button class="btn btn-primary btn-sm view-details" data-nombre="Ensalada Griega" data-precio="9">Ver Detalles</button>
+              </div>
+            </div>
+          </div>
+          <!-- Nueva ensalada -->
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img src="../../assets/default.jpg" class="card-img-top" alt="Ensalada César con Pollo">
+              <div class="card-body">
+                <h5 class="card-title">Ensalada César con Pollo</h5>
+                <p class="card-text">Precio: $10</p>
+                <button class="btn btn-primary btn-sm view-details" data-nombre="Ensalada César con Pollo" data-precio="10">Ver Detalles</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="bebidas" role="tabpanel" aria-labelledby="bebidas-tab">
+        <div class="row" id="bebidasItems">
+          <!-- Aquí se agregarán las bebidas dinámicamente -->
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img src="../../assets/default.jpg" class="card-img-top" alt="Coca Cola">
+              <div class="card-body">
+                <h5 class="card-title">Coca Cola</h5>
+                <p class="card-text">Precio: $2</p>
+                <button class="btn btn-primary btn-sm view-details" data-nombre="Coca Cola" data-precio="2">Ver Detalles</button>
+              </div>
+            </div>
+          </div>
+          <!-- Nueva bebida -->
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img src="../../assets/default.jpg" class="card-img-top" alt="Agua Mineral">
+              <div class="card-body">
+                <h5 class="card-title">Agua Mineral</h5>
+                <p class="card-text">Precio: $1</p>
+                <button class="btn btn-primary btn-sm view-details" data-nombre="Agua Mineral" data-precio="1">Ver Detalles</button>
+              </div>
+            </div>
+          </div>
+          <!-- Nueva bebida -->
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img src="../../assets/default.jpg" class="card-img-top" alt="Jugo de Naranja">
+              <div class="card-body">
+                <h5 class="card-title">Jugo de Naranja</h5>
+                <p class="card-text">Precio: $3</p>
+                <button class="btn btn-primary btn-sm view-details" data-nombre="Jugo de Naranja" data-precio="3">Ver Detalles</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="menuItemModal" tabindex="-1" role="dialog" aria-labelledby="menuItemModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="menuItemModalLabel">Detalles del Platillo</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="modalContent">
+          <!-- Aquí se agregará la información del platillo seleccionado -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" id="addToCartBtn">Agregar al Carrito</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script src="../../js/script.js"></script>
+</body>
+</html>
+
+
