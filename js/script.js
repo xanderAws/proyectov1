@@ -1,56 +1,118 @@
 $(document).ready(function() {
   // Definir objetos de productos con nombre, precio e ingredientes
   const productos = {
-    "Huevos Revueltos": {
-      precio: 5,
-      ingredientes: "Huevos, sal, pimienta, mantequilla"
+    "Desayuno Tipico": {
+      precio: 5.50,
+      ingredientes: "Huevos revueltos, Frijoles refritos, queso, rodajas de platano y pan"
     },
     "Tostadas Francesas": {
-      precio: 6,
-      ingredientes: "Pan, huevos, leche, canela, azúcar"
+      precio: 4.50,
+      ingredientes: "5 tostadas francesas, miel de maple, taza de cafe (gratis refil de cafe hasta las 11:00 AM)"
     },
     "Panqueques": {
-      precio: 7,
-      ingredientes: "Harina, huevos, leche, azúcar, sal"
+      precio: 4.00,
+      ingredientes: "Tres hotcakes doraditos con mantequilla suave y el dulce sabor de la miel de maple, incluye taza de cafe (gratis refil de cafe hasta las 11:00 AM) "
     },
     "Smokehouse Gourmet": {
-      precio: 10,
-      ingredientes: "Pan de hamburguesa, carne de res, lechuga, tomate, cebolla, queso, salsa, condimentos"
+      precio: 11.00,
+      ingredientes: "Pan artesanal o blanco, aros de cebolla, queso cheddar blanco, tocino, cebolla caramelizada y aderezo especial, carne 100% de res y papas gajo"
     },
     "Salmón a la Parrilla": {
-      precio: 15,
-      ingredientes: "Salmón, limón, aceite de oliva, sal, pimienta"
+      precio: 17.50,
+      ingredientes: " Salmón a la parilla acompañado de una deliciosa salsa de aguacate y vegetales"
     },
-    "Filete de Ternera": {
+    "Lomito": {
       precio: 18,
-      ingredientes: "Filete de ternera, sal, pimienta, aceite de oliva"
+      ingredientes: "10 oz de lomito acompañado de la salsa de la casa, vegetales salteados, pure de papa y tortillas"
     },
     "Ensalada César": {
       precio: 8,
-      ingredientes: "Lechuga romana, aderezo César, queso parmesano, crutones"
+      ingredientes: "Lechuga romana, aderezo César, queso parmesano, crutones, tomate"
     },
     "Ensalada Griega": {
-      precio: 9,
-      ingredientes: "Pepino, tomate, cebolla roja, aceitunas kalamata, queso feta, aderezo griego"
+      precio: 7.50,
+      ingredientes: "Lechuga romana,Pepino, tomate, cebolla roja, aceitunas kalamata, queso feta, aderezo griego"
     },
     "Ensalada César con Pollo": {
-      precio: 10,
+      precio: 6.50,
       ingredientes: "Lechuga romana, aderezo César, queso parmesano, crutones, pechuga de pollo a la parrilla"
     },
     "Coca Cola": {
+      precio: 1.25,
+       ingredientes: "Coca-cola de 12oz"
+    },
+    "Limonada con hierbabuena": {
       precio: 2,
-      ingredientes: "Agua carbonatada, azúcar, colorante, ácido fosfórico, cafeína"
+      ingredientes: "Limonada fresca con hierbabuena"
     },
-    "Agua Mineral": {
-      precio: 1,
-      ingredientes: "Agua purificada"
+    "Jugo de Naranja con Zanahoria": {
+      precio: 2,
+      ingredientes: "Jugo de naranja natural con zanahoria"
     },
-    "Jugo de Naranja": {
-      precio: 3,
-      ingredientes: "Jugo de naranja natural"
+    "Plato Infantil 1": {
+      precio: 5.00,
+      ingredientes: "Hamburguesa pequeña, papas pequeñas, jugo de manzana"
+    },
+    "Plato Infantil 2": {
+      precio: 6.50,
+      ingredientes: "8oz de Pechuga de pollo a la plancha, con ensalada de vegetales "
+    },
+    "Plato Infantil 3": {
+      precio: 7.50,
+      ingredientes: "8 oz de lomito a la parrilla acompañado de papas gajo y chirimol"
     }
   };
 
+  var cart = [];
+
+  // Función para mostrar los detalles del producto en el modal
+  $(".view-details").click(function() {
+    var nombre = $(this).data('nombre');
+    var precio = $(this).data('precio');
+    var detallesHTML = "<p>Producto: " + nombre + "</p><p>Precio: $" + precio + "</p>";
+    $("#modalContent").html(detallesHTML);
+    $("#addToCartBtn").attr('data-nombre', nombre); // Actualizando el atributo data-nombre
+    $("#addToCartBtn").attr('data-precio', precio); // Actualizando el atributo data-precio
+    $("#menuItemModal").modal('show');
+  });
+
+  // Función para agregar productos al carrito
+  $("#addToCartBtn").click(function() {
+    var nombre = $(this).attr('data-nombre'); // Obteniendo el nombre del producto del atributo data-nombre
+    var precio = $(this).attr('data-precio'); // Obteniendo el precio del producto del atributo data-precio
+    var cantidad = parseInt($("#cantidad").val()) || 1; // Obteniendo la cantidad del producto
+    var item = {
+      nombre: nombre,
+      precio: precio,
+      cantidad: cantidad
+    };
+    cart.push(item);
+    updateCart();
+    $("#menuItemModal").modal('hide');
+  });
+
+  // Función para actualizar la vista del carrito y el total a pagar
+function updateCart() {
+  var cartHTML = "<ul>";
+  var total = 0;
+  for (var i = 0; i < cart.length; i++) {
+    var subtotal = cart[i].precio * cart[i].cantidad;
+    total += subtotal;
+    cartHTML += "<li>" + cart[i].nombre + " - $" + cart[i].precio + " - Cantidad: " + cart[i].cantidad  + " <button class='btn btn-sm btn-danger remove-item' data-index='" + i + "'>Quitar</button></li>";
+    // Agregar separación entre los productos en el carrito
+    cartHTML += "<br>";
+  }
+  cartHTML += "</ul>";
+  $("#cartContent").html(cartHTML);
+  $("#total").text("Total: $" + total.toFixed(2));
+}
+
+// Manejar el evento click para quitar productos del carrito
+$("#cartContent").on("click", ".remove-item", function() {
+  var index = $(this).data('index');
+  cart.splice(index, 1);
+  updateCart();
+});
   // Mostrar detalles del platillo en el modal
   $("#menuContent").on("click", ".view-details", function() {
     const nombre = $(this).data("nombre");
@@ -89,16 +151,6 @@ $(document).ready(function() {
     if (cantidad > 1) {
       cantidadInput.val(cantidad - 1);
     }
-  });
-
-  // Agregar al carrito
-  $("#addToCartBtn").on("click", function() {
-    const nombre = $(this).data("nombre");
-    const precio = $(this).data("precio");
-    const cantidad = parseInt($("#cantidad").val());
-    // Aquí puedes agregar la lógica para agregar el producto al carrito
-    console.log(`Agregado al carrito: ${cantidad}x ${nombre} - $${precio * cantidad}`);
-    $("#menuItemModal").modal("hide");
   });
 });
 

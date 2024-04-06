@@ -13,6 +13,11 @@
   <div class="container">
     <h1 class="text-center my-4">Menú de Comidas</h1>
 
+    <!-- Botón de Carrito de Compras -->
+    <button type="button" class="btn btn-primary float-right mb-4" id="cartModalBtn" data-toggle="modal" data-target="#cartModal">
+      <i class="fas fa-shopping-cart"></i> Carrito
+    </button>
+
     <!-- Menú de Categorías -->
     <ul class="nav nav-pills mb-4" id="menuTabs" role="tablist">
       <li class="nav-item">
@@ -27,6 +32,9 @@
       <li class="nav-item">
         <a class="nav-link" id="bebidas-tab" data-toggle="pill" href="#bebidas" role="tab" aria-controls="bebidas" aria-selected="false">Bebidas</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" id="infantil-tab" data-toggle="pill" href="#infantil" role="tab" aria-controls="infantil" aria-selected="false">Menú Infantil</a>
+      </li>
     </ul>
 
     <!-- Contenido del Menú -->
@@ -36,32 +44,32 @@
           <!-- Aquí se agregarán los desayunos dinámicamente -->
           <div class="col-md-4 mb-4">
             <div class="card">
-              <img src="../../assets/default.jpg" class="card-img-top" alt="Huevos Revueltos">
+              <img src="../../assets/desayuno.jpg" class="card-img-top" alt="Desayuno Tipico">
               <div class="card-body">
-                <h5 class="card-title">Huevos Revueltos</h5>
-                <p class="card-text">Precio: $5</p>
-                <button class="btn btn-primary btn-sm view-details" data-nombre="Huevos Revueltos" data-precio="5">Ver Detalles</button>
+                <h5 class="card-title">Desayuno Tipico</h5>
+                <p class="card-text">Precio: $5.50</p>
+                <button class="btn btn-primary btn-sm view-details" data-nombre="Desayuno Tipico" data-precio="5.50">Ver Detalles</button>
               </div>
             </div>
           </div>
           <div class="col-md-4 mb-4">
             <div class="card">
-              <img src="../../assets/default.jpg" class="card-img-top" alt="Tostadas Francesas">
+              <img src="../../assets/tostadas.png" class="card-img-top" id = "tostadas" alt="Tostadas Francesas">
               <div class="card-body">
                 <h5 class="card-title">Tostadas Francesas</h5>
-                <p class="card-text">Precio: $6</p>
-                <button class="btn btn-primary btn-sm view-details" data-nombre="Tostadas Francesas" data-precio="6">Ver Detalles</button>
+                <p class="card-text">Precio: $4.50</p>
+                <button class="btn btn-primary btn-sm view-details" data-nombre="Tostadas Francesas" data-precio="4.50">Ver Detalles</button>
               </div>
             </div>
           </div>
           <!-- Nuevo desayuno -->
           <div class="col-md-4 mb-4">
             <div class="card">
-              <img src="../../assets/default.jpg" class="card-img-top" alt="Panqueques">
+              <img src="../../assets/paqueque.png" class="card-img-top" alt="Panqueques">
               <div class="card-body">
                 <h5 class="card-title">Panqueques</h5>
-                <p class="card-text">Precio: $7</p>
-                <button class="btn btn-primary btn-sm view-details" data-nombre="Panqueques" data-precio="7">Ver Detalles</button>
+                <p class="card-text">Precio: $4.00</p>
+                <button class="btn btn-primary btn-sm view-details" data-nombre="Panqueques" data-precio="4.00">Ver Detalles</button>
               </div>
             </div>
           </div>
@@ -75,30 +83,35 @@
               <img src="../../assets/hamburguesa.jpg" class="card-img-top" alt="Hamburguesa">
               <div class="card-body">
                 <h5 class="card-title">Hamburguesa</h5>
-                <p class="card-text">Precio: $10</p>
-                <button class="btn btn-primary btn-sm view-details" data-nombre="Smokehouse Gourmet" data-precio="10">Ver Detalles</button>
+                <p class="card-text">Precio: $11.00</p>
+                <button class="btn btn-primary btn-sm view-details" data-nombre="Smokehouse Gourmet" data-precio="11.00">Ver Detalles</button>
               </div>
             </div>
           </div>
           <!-- Nuevo plato fuerte -->
           <div class="col-md-4 mb-4">
             <div class="card">
-              <img src="../../assets/default.jpg" class="card-img-top" alt="Salmón a la Parrilla">
+              <br>
+              <br>
+              
+              <img src="https://www.laylita.com/recetas/wp-content/uploads/Pescado-asado-receta-facil.jpg" class="card-img-top" alt="Salmón a la Parrilla">
               <div class="card-body">
                 <h5 class="card-title">Salmón a la Parrilla</h5>
-                <p class="card-text">Precio: $15</p>
-                <button class="btn btn-primary btn-sm view-details" data-nombre="Salmón a la Parrilla" data-precio="15">Ver Detalles</button>
+                <p class="card-text">Precio: $17.5</p>
+                <button class="btn btn-primary btn-sm view-details" data-nombre="Salmón a la Parrilla" data-precio="17.5">Ver Detalles</button>
               </div>
             </div>
           </div>
           <!-- Nuevo plato fuerte -->
           <div class="col-md-4 mb-4">
             <div class="card">
-              <img src="../../assets/default.jpg" class="card-img-top" alt="Filete de Ternera">
+              <br>
+              
+              <img src="../../assets/Lomito.jpg" class="card-img-top" alt="Lomito">
               <div class="card-body">
-                <h5 class="card-title">Filete de Ternera</h5>
+                <h5 class="card-title">Lomito</h5>
                 <p class="card-text">Precio: $18</p>
-                <button class="btn btn-primary btn-sm view-details" data-nombre="Filete de Ternera" data-precio="18">Ver Detalles</button>
+                <button class="btn btn-primary btn-sm view-details" data-nombre="Lomito" data-precio="18">Ver Detalles</button>
               </div>
             </div>
           </div>
@@ -109,7 +122,8 @@
           <!-- Aquí se agregarán las ensaladas dinámicamente -->
           <div class="col-md-4 mb-4">
             <div class="card">
-              <img src="../../assets/default.jpg" class="card-img-top" alt="Ensalada César">
+              <br>
+              <img src="../../assets/ensalada.png" class="card-img-top" alt="Ensalada César">
               <div class="card-body">
                 <h5 class="card-title">Ensalada César</h5>
                 <p class="card-text">Precio: $8</p>
@@ -120,22 +134,22 @@
           <!-- Nueva ensalada -->
           <div class="col-md-4 mb-4">
             <div class="card">
-              <img src="../../assets/default.jpg" class="card-img-top" alt="Ensalada Griega">
+              <img src="../../assets/ensaladagriega.png" class="card-img-top" alt="Ensalada Griega">
               <div class="card-body">
                 <h5 class="card-title">Ensalada Griega</h5>
-                <p class="card-text">Precio: $9</p>
-                <button class="btn btn-primary btn-sm view-details" data-nombre="Ensalada Griega" data-precio="9">Ver Detalles</button>
+                <p class="card-text">Precio: $7.50</p>
+                <button class="btn btn-primary btn-sm view-details" data-nombre="Ensalada Griega" data-precio="7.50">Ver Detalles</button>
               </div>
             </div>
           </div>
           <!-- Nueva ensalada -->
           <div class="col-md-4 mb-4">
             <div class="card">
-              <img src="../../assets/default.jpg" class="card-img-top" alt="Ensalada César con Pollo">
+              <img src="../../assets/ensaladapollo.png" class="card-img-top" alt="Ensalada César con Pollo">
               <div class="card-body">
                 <h5 class="card-title">Ensalada César con Pollo</h5>
-                <p class="card-text">Precio: $10</p>
-                <button class="btn btn-primary btn-sm view-details" data-nombre="Ensalada César con Pollo" data-precio="10">Ver Detalles</button>
+                <p class="card-text">Precio: $6.50</p>
+                <button class="btn btn-primary btn-sm view-details" data-nombre="Ensalada César con Pollo" data-precio="6.50">Ver Detalles</button>
               </div>
             </div>
           </div>
@@ -146,33 +160,73 @@
           <!-- Aquí se agregarán las bebidas dinámicamente -->
           <div class="col-md-4 mb-4">
             <div class="card">
-              <img src="../../assets/default.jpg" class="card-img-top" alt="Coca Cola">
+              <img src="../../assets/coca.png" class="card-img-top" alt="Coca Cola">
               <div class="card-body">
                 <h5 class="card-title">Coca Cola</h5>
+                <p class="card-text">Precio: $1.25</p>
+                <button class="btn btn-primary btn-sm view-details" data-nombre="Coca Cola" data-precio="1.25">Ver Detalles</button>
+              </div>
+            </div>
+          </div>
+          <!-- Nueva bebida -->
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img src="../../assets/limonada.png" class="card-img-top" alt="Limonada con hierbabuena">
+              <div class="card-body">
+                <h5 class="card-title">Limonada con hierbabuena</h5>
                 <p class="card-text">Precio: $2</p>
-                <button class="btn btn-primary btn-sm view-details" data-nombre="Coca Cola" data-precio="2">Ver Detalles</button>
+                <button class="btn btn-primary btn-sm view-details" data-nombre="Limonada con hierbabuena" data-precio="2">Ver Detalles</button>
               </div>
             </div>
           </div>
           <!-- Nueva bebida -->
           <div class="col-md-4 mb-4">
             <div class="card">
-              <img src="../../assets/default.jpg" class="card-img-top" alt="Agua Mineral">
+             
+              <img src="../../assets/naranja.png" class="card-img-top" alt="Jugo de Naranja con Zanahoria">
               <div class="card-body">
-                <h5 class="card-title">Agua Mineral</h5>
-                <p class="card-text">Precio: $1</p>
-                <button class="btn btn-primary btn-sm view-details" data-nombre="Agua Mineral" data-precio="1">Ver Detalles</button>
+                <h5 class="card-title">Jugo de Naranja con Zanahoria</h5>
+                <p class="card-text">Precio: $2</p>
+                <button class="btn btn-primary btn-sm view-details" data-nombre="Jugo de Naranja con Zanahoria" data-precio="2">Ver Detalles</button>
               </div>
             </div>
           </div>
-          <!-- Nueva bebida -->
+        </div>
+      </div>
+      <div class="tab-pane fade" id="infantil" role="tabpanel" aria-labelledby="infantil-tab">
+        <div class="row" id="infantilItems">
+          <!-- Aquí se agregarán los platos del menú infantil dinámicamente -->
           <div class="col-md-4 mb-4">
             <div class="card">
-              <img src="../../assets/default.jpg" class="card-img-top" alt="Jugo de Naranja">
+              <br>
+              <img src="../../assets/hamburguesainfantil.png" class="card-img-top" alt="Plato Infantil 1">
               <div class="card-body">
-                <h5 class="card-title">Jugo de Naranja</h5>
-                <p class="card-text">Precio: $3</p>
-                <button class="btn btn-primary btn-sm view-details" data-nombre="Jugo de Naranja" data-precio="3">Ver Detalles</button>
+                <h5 class="card-title">Plato Infantil 1</h5>
+                <p class="card-text">Precio: $5.00</p>
+                <button class="btn btn-primary btn-sm view-details" data-nombre="Plato Infantil 1" data-precio="5.00">Ver Detalles</button>
+              </div>
+            </div>
+          </div>
+          <!-- Nuevo plato del menú infantil -->
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img src="../../assets/pollo.png" class="card-img-top" alt="Plato Infantil 2">
+              <div class="card-body">
+                <h5 class="card-title">Plato Infantil 2</h5>
+                <p class="card-text">Precio: $6.50</p>
+                <button class="btn btn-primary btn-sm view-details" data-nombre="Plato Infantil 2" data-precio="6.50">Ver Detalles</button>
+              </div>
+            </div>
+          </div>
+          <!-- Nuevo plato del menú infantil -->
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <br>
+              <img src="../../assets/carne.jpg" class="card-img-top" alt="Plato Infantil 3">
+              <div class="card-body">
+                <h5 class="card-title">Plato Infantil 3</h5>
+                <p class="card-text">Precio: $7.50</p>
+                <button class="btn btn-primary btn-sm view-details" data-nombre="Plato Infantil 3" data-precio="7.50">Ver Detalles</button>
               </div>
             </div>
           </div>
@@ -195,8 +249,31 @@
           <!-- Aquí se agregará la información del platillo seleccionado -->
         </div>
         <div class="modal-footer">
+          
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
           <button type="button" class="btn btn-primary" id="addToCartBtn">Agregar al Carrito</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Carrito de Compras -->
+  <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="cartModalLabel">Carrito de Compras</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="cartContent">
+          <!-- Aquí se mostrarán los productos agregados al carrito -->
+        </div>
+        <div class="modal-footer">
+          <div id="total">Total: $0.00</div>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" id="proceedToCheckoutBtn">Proceder con el Pago</button>
         </div>
       </div>
     </div>
@@ -206,8 +283,12 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
   <script src="../../js/script.js"></script>
 </body>
 </html>
+
+
 
 
