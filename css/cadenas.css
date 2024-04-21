@@ -5,6 +5,7 @@ body {
     background-image: url(../../assets/img/fondo.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center; 
 }
 nav {
     display:flex;
@@ -94,7 +95,233 @@ h2{
     border-radius: 5px;
     transition: background-color 0.3s;
 }
-
+#promos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly; 
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
 .cadena a:hover {
     background-color: #ffc800;
+}
+.cardprom {
+    display: flex;
+    align-items: center;
+    width: 75vw;
+    max-width: 450px;
+    padding: 50px 30px 50px 20px;
+    background: rgba(18, 16, 23, 0.9);
+    border-radius: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .cardprom img {
+    max-width: 280px;
+    width: 35vw;
+    height: 300px;
+    object-fit: cover;
+    margin-left: -60px;
+    margin-right: 30px;
+    border-radius: inherit;
+    box-shadow: 0 60px 40px rgb(0 0 0 / 8%);
+    transition: transform 0.3s ease;
+  }
+
+  .cardprom img:hover {
+    transform: scale(1.1); 
+}
+  
+  .cardprom h2 {
+    font-size: 26px;
+    font-weight: 400;
+    margin-top: 0;
+    margin-right: 30px;
+    margin-bottom: 10px;
+  }
+  
+  .cardprom h3 {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+    opacity: 0.75;
+    color: white;
+  }
+  
+  .cardprom p {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 30px;
+    opacity: 0.5;
+    color: white;
+  }
+  
+  .cardprom a {
+    border: 1px solid #f8f8f8;
+    background: transparent;
+    color: #f8f8f8;
+    font-family: inherit;
+    padding: 16px 26px;
+    font-size: 16px;
+    border-radius: 40px;
+  }
+
+  .cardprom a:hover{
+    color: cyan;
+    border: 1px solid cyan;
+  }
+  
+  .divider {
+    border: 0; 
+    height: 1px; 
+    background-color: gray; 
+    margin: 20px auto;
+    width: 1500px;
+    margin-bottom: 50px;
+}
+    .promociones h2{
+        color:white;
+        font-size: 30px;
+        text-align: center;
+}
+  @media (width <= 600px) {
+    .cardprom {
+      margin: 0 40px;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-bottom: 60px;
+      width: 100%;
+      text-align: center;
+      flex-direction: column;
+    }
+  
+    .cardprom h2 {
+      margin-right: 0;
+      font-size: 26px;
+    }
+  
+    .cardprom img {
+      margin: -100px 0 30px 0;
+      width: 100%;
+      max-width: 1000px;
+      height: 250px;
+      transition: transform 0.3s ease;
+    }
+
+    .cardprom img:hover {
+        transform: scale(1.1); 
+    }
+  
+    .cardprom p {
+      max-width: 360px;
+    }
+  }
+  
+  @media (width <= 440px) {
+    .cardprom img {
+      height: 45vw;
+      width: 45vw;
+      border-radius: 50%;
+      margin: -140px 0 30px 0;
+    }
+  }
+  .topcard {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 100px 50px;
+    padding: 100px 50px;
+}
+.topcard .custom-card {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 350px;
+    max-width: 100%;
+    height: 300px;
+    background: rgba(18, 16, 23, 0.9);
+    border-radius: 20px;
+    transition: 0.5s;
+    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
+}
+.topcard .custom-card:hover {
+    height: 400px;
+}
+.topcard .custom-card .img-box {
+    position: absolute;
+    top: 20px;
+    width: 300px;
+    height: 220px;
+    background: #333;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+.topcard .custom-card:hover .img-box {
+    top: -100px;
+    scale: 0.75;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+}
+.topcard .custom-card .img-box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.topcard .custom-card .custom-content {
+    position: absolute;
+    top: 230px;
+    width: 100%;
+    height: 50px;
+    padding: 0 20px;
+    text-align: center;
+    overflow: hidden;
+    transition: 0.5s;
+}
+.topcard .custom-card:hover .custom-content {
+    top: 130px;
+    height: 250px;
+}
+.topcard .custom-card .custom-content h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+}
+.topcard .custom-card .custom-content p {
+    color: white;
+    margin-bottom: 50px;
+}
+.topcard .custom-card .custom-content a {
+    border: 1px solid #f8f8f8;
+    background: transparent;
+    color: #f8f8f8;
+    font-family: inherit;
+    padding: 16px 26px;
+    font-size: 16px;
+    border-radius: 40px;
+}
+.topcard .custom-card .custom-content a:hover {
+    color: cyan;
+    border: 1px solid cyan;
+}
+@media (max-width: 480px) {
+    .topcard .custom-card {
+        width: 230px;
+        border-radius: 15px;
+    }
+    .topcard .custom-card .img-box {
+        width: 185px;
+        border-radius: 10px;
+    }
+    .topcard .custom-card .custom-content p {
+        font-size: 0.8rem;
+    }
+    .topcard .custom-card .custom-content a {
+        font-size: 0.9rem;
+    }
 }
